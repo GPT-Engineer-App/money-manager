@@ -90,7 +90,8 @@ const Index = () => {
 
   const calculateBalance = () => {
     return transactions.reduce((acc, curr) => {
-      return curr.type === "income" ? acc + curr.amount : acc - curr.amount;
+      const amount = parseFloat(curr.amount);
+      return curr.type === "income" ? acc + amount : acc - amount;
     }, 0);
   };
 
